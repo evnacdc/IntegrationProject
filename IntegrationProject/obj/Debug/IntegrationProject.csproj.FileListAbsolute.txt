@@ -1,0 +1,6 @@
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\bin\Debug\IntegrationProject.exe.config
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\bin\Debug\IntegrationProject.exe
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\bin\Debug\IntegrationProject.pdb
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\obj\Debug\IntegrationProject.csprojResolveAssemblyReference.cache
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\obj\Debug\IntegrationProject.exe
+h:\documents\visual studio 2015\Projects\IntegrationProject\IntegrationProject\obj\Debug\IntegrationProject.pdb
