@@ -20,14 +20,21 @@ namespace IntegrationProject
             this.CompanyID = CompanyIDCounter++;
         }
 
-        // Check if item is in stock. For retailers, first check vendor avaliability
-        protected abstract bool CheckAvaliability(Item ItemType, int Quantity);
+        public int GetQuantity(Item ItemType)
+        {
+            return InventoryDB.GetQuantity(ItemType);
+        }
 
-        // Remove Item From Database and Send Notification to other Databases
-        protected abstract bool RemoveItemFromInventory(Item ItemType);
+        // Return Item of ItemID
+        public Item GetItem(String ItemID)
+        {
+            return InventoryDB.GetItem(ItemID);
+        }
 
-        // Add Item to Database and Send Notification to other Databases
-        protected abstract bool AddItemToInventory(Item ItemType);
+        public void SetQuantity(Item ItemType, int Quantity)
+        {
+            InventoryDB.SetItemQuantity(ItemType, Quantity);
+        }
 
         public void PrintInventory()
         {

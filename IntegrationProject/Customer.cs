@@ -86,7 +86,9 @@ namespace IntegrationProject
             int Zip = UsefulMethods.GetRandomNumber(10000, 99999);
 
             Address addr = new Address(State, City, Zip, Street);
-            return new Customer(FirstName, LastName, addr);
+            Customer c = new Customer(FirstName, LastName, addr);
+            c.EmailAddress = FirstName + LastName + "@email.net";
+            return c;
         }
 
         public override String ToString()

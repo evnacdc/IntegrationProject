@@ -9,7 +9,6 @@ namespace IntegrationProject
     class SupplyCompany:Company
     {
 
-        String CompanyName;
         InventoryDatabase InventoryDB;
         public String InventoryPrefix;
 
@@ -18,23 +17,20 @@ namespace IntegrationProject
             this.InventoryPrefix = InventoryPrefix;
         }
 
-
         // Override Methods from Super
-        protected override bool RemoveItemFromInventory(Item ItemType)
+        public bool RemoveItemsFromInventory(Item ItemType, int Quantity)
         {
-
             return true; //FIXME 
         }
 
-        protected override bool AddItemToInventory(Item ItemType)
+        public bool AddItemsToInventory(Item ItemType, int Quantity)
         {
-
             return true; //FIXME
         }
 
-        protected override bool CheckAvaliability(Item ItemType, int Quantity)
+        public bool CheckAvaliability(Item ItemType, int Quantity)
         {
-            throw new NotImplementedException();
+            return InventoryDB.CheckAvaliability(ItemType, Quantity);
         }
     }
 }

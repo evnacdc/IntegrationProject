@@ -84,6 +84,14 @@ namespace IntegrationProject
             RunSingleSqlCommand(SqlCommandString);
         }
 
+        public void SetItemQuantity(Item i, int quantity)
+        {
+            // Set Quantity of item to "quantity"
+            String SqlCommandString = "UPDATE " + TableName + " SET Quantity = " + quantity.ToString() +
+                " WHERE ID = " + FormattedSqlString(i.InventoryID);
+            RunSingleSqlCommand(SqlCommandString);
+        }
+
         public int GetQuantity(Item i)
         {
             return GetInt("ID", i.InventoryID, "Quantity");

@@ -30,14 +30,14 @@ namespace IntegrationProject
         // Return Supply company matching prefix of inventory ID
         private SupplyCompany GetSupplyCompanyFromInventoryID(String ID)
         {
-            foreach (SupplyCompany sc in SupplyCompanies)
-                if (ID.StartsWith(sc.InventoryPrefix))
-                    return sc;
+            for(int i =0; i<SupplyCompanies.Count; i++)
+                if (ID.StartsWith(SupplyCompanies.ElementAt(i).InventoryPrefix))
+                    return SupplyCompanies.ElementAt(i);
 
             return null;
         }
 
-        public void UpdateInventory()
+        public void UpdateCatalog()
         {
             // Update Inventory from retail vendor databases
         }
@@ -49,29 +49,14 @@ namespace IntegrationProject
             return true;
         }
 
-        private bool UpdateItem(Item i)
+        public void NewCustomer(Customer c)
         {
-            // Update Item information from vendor database
 
-            return true;
         }
 
-        // Override Methods from Super
-        protected override bool RemoveItemFromInventory(Item ItemType)
+        public void RemoveCustomer(int ID)
         {
 
-            return true; //FIXME 
-        }
-
-        protected override bool AddItemToInventory(Item ItemType)
-        {
-
-            return true; //FIXME
-        }
-
-        protected override bool CheckAvaliability(Item ItemType, int Quantity)
-        {
-            throw new NotImplementedException();
         }
 
         public override String ToString()
@@ -81,7 +66,6 @@ namespace IntegrationProject
             sb.AppendLine("Retailers: ");
             foreach (SupplyCompany sc in SupplyCompanies)
                 sb.AppendLine("    --" + sc.CompanyName);
-
 
             return sb.ToString();
         }
